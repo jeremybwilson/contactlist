@@ -32,4 +32,8 @@ angular.module('myApp.contacts', ['ngRoute'])
     });
   };
 
+  $scope.removeContact = function(contact){
+    $scope.contacts.$remove(contact)
+  }
+
 }]);
