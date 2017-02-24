@@ -9,5 +9,12 @@ angular.module('myApp', [
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/contacts'});
+$routeProvider
+  .when('/', 
+  {
+    controller: 'ContactsCtrl',
+    templateUrl: '/contacts/contacts.html'
+  })
+  //Define a route that has a route parameter in it (:customerID)
+  .otherwise({redirectTo: '/'});
 }]);
